@@ -2,27 +2,19 @@
 <html>
  <head>
   <title>Patrick Hack's Blog Site</title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-  <link rel="stylesheet" href="/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/css/fontawesome-all.css" />
+<!DOCTYPE html>
+<html>
+ <head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='stylesheets/style.css'/>
  </head>
  <body>
-  <div class="container">
-   <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-primary">
-  <a class="navbar-brand" href="/">My Blog</a>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-    <a class="nav-item nav-link active" href="/list">List Blogs</a>
-    <a class="nav-item nav-link active" href="/add">Add Blogs</a>
-    </div>
-  </div>
-    </nav>
-  <p></p> 
-  <h1>Patrick Hack's Blog Site</h1>
-  <p>Welcome to my bloging site!</p>
- </div>
+  <ul>
+   <li><a href="/">My Blog</a></li>
+   <li><a href="/list">List Blogs</a></li> 
+   <li><a href="/add">Add Blogs</a></li>
+  </ul>
+  <h1><%= title %></h1>
+  <p>This Site Is Under Construction</p>
  </body>
- <script src="/js/jquery.min.js"></script>
- <script src="/js/bootstrap.min.js"></script>
 </html>
-

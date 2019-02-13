@@ -1,0 +1,16 @@
+
+> blogger@0.0.0 start /home/bitnami/blogger
+> node ./bin/www
+
+[0mGET / [32m200 [0m10.712 ms - 457[0m
+[0mGET /stylesheets/style.css [32m200 [0m3.432 ms - 446[0m
+[0mGET /favicon.ico [33m404 [0m1.502 ms - 906[0m
+[0mGET / [36m304 [0m1.150 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m0.633 ms - -[0m
+[0mGET / [36m304 [0m0.641 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m0.301 ms - -[0m
+[0mGET / [36m304 [0m0.662 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m0.283 ms - -[0m
+[0mGET / [36m304 [0m0.992 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m0.272 ms - -[0m
+[0mHEAD /phpmyadmin/index.php [33m404 [0m0.939 ms - 906[0m
