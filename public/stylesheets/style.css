@@ -28,6 +28,12 @@ li a:hover {
   background-color: #111;
 }
 
+div.entryMain{
+  display: block;
+  color: #007BFF;
+  text-decoration: none;
+}
+
 a {
   color: #00B7FF;
 }

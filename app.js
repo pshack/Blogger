@@ -4,13 +4,14 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+require('./app_server/models/db');
 
-var index = require('./routes/index');
+var index = require('./app_server/routes/index');
 
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'app_server',  'views'));
 app.set('view engine', 'ejs');
 //app.use('js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
 //app.use('js', express.static(__dirname + '/node_modules/jquery/dist'));
