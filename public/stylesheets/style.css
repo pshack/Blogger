@@ -2,38 +2,95 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
-ul {
-  list-style-type: none;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden;
-  background-color: #007BFF;
-  width: 100% !important;
+ul{
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #15D5A2;
+    width:100%;
 }
-
 li {
-  float: left;
+    float: left;
 }
-
 li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration:none;
 }
-
-li a:hover {
-  background-color: #111;
+li a:hover{
+    background-color: #111;
 }
-
-div.entryMain{
-  display: block;
-  color: #007BFF;
-  text-decoration: none;
-}
-
 a {
   color: #00B7FF;
+}
+div.entryMain{
+    outline-style: solid;
+    outline-color: black;
+    outline-width: thin;
+    height: 200px;
+    width: 40%;
+}
+div.entryHeader{
+    background-color:#1792B7;
+    outline-color:silver;
+    outline-width:thin;
+    outline-style:solid;
+    width:100%;
+    height:20%;
+}
+input.entryTitle{
+    background-color:#1792B7;
+    width:100%;
+    height:20%;
+    border-style:none;
+}
+div.entryBody{
+    height:60%;
+    background-color:white;
+    width:100%;
+}
+div.entryFooter{
+    outline-style:solid;
+    outline-width:thin;
+    outline-color:silver;
+    height:40px;
+    width:100%;
+    bottom:40px;
+    background-color:#1792B7;
+}
+p.entryText{
+    font-size:large;
+    font-weight:bold;
+    position:relative;
+    left:10px;
+}
+p.deleteText{
+    position:relative;
+    left:10px;
+    font-weight:bold;
+    font-size:large;
+    margin:none;
+}
+textarea.entryText{
+    font-size:large;
+    font-weight:bold;
+    position:relative;
+    height:55%;
+    width:98%;
+    border-style:none;
+    padding:none;
+    
+}
+i.glyphicon-pencil{
+    display:inline;
+    left:82%;
+    top:30%;
+}
+i.glyphicon-trash{
+    display:inline;
+    left:85%;
+    top:30%;
 }
