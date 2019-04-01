@@ -50,7 +50,7 @@ app.config(function($routeProvider) {
 //*** Controllers *** 
 app.controller('homeController', function homeController() {
     var vm = this;
-    vm.homeHeader = "Eric Frey's Blog Site";
+    vm.homeHeader = "Patrick Hack's Blog Site";
     vm.homeText = "Welcome to my blog site";
 });
 app.controller('listController', function listController($http) {

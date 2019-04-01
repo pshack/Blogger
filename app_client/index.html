@@ -9,9 +9,10 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
 integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
 </head> 
+
 <!-- Navigation --> 
 <body ng-controller="homeController"> 
-<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark" style="background-color: #4CB60F";>
   <a class="navbar-brand" href="#/home">My Blog</a>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
@@ -32,12 +33,12 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
   <h1>{{vm.listHeader}}</h1>
   <p></p>
   <div ng-repeat="blog in vm.blogs">
-    <div class="card text-white bg-dark mb-3" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{blog.blogtitle}}</h5>
-    <p class="card-text">{{blog.blogtext}}</p>
-    <a href="#/remove/{{blog._id}}" class="btn btn-primary">Delete</a>
-    <a href="#/edit/{{blog._id}}" class="btn btn-primary">Edit</a>
+    <div class="card text-white bg-dark mb-3" style="width: 18rem">
+  <div class="card-body" style="background-color: #B3E11F">
+    <h5 class="card-title" style="color: black">{{blog.blogtitle}}</h5>
+    <p class="card-text" style="color: black">{{blog.blogtext}}</p>
+    <a href="#/edit/{{blog._id}}" class ="btn btn-primary">Edit Blog</a>
+    <a href="#/remove/{{blog._id}}" class="btn btn-primary">Delete Blog</i></a>
   </div> 
 </div> 
 </div> 
@@ -46,10 +47,12 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 <!--Add Page--> <script type="text/ng-template" id="add.html">
   <p></p>
   <div class="card border-primary" style="width: 50%">
-    <form name="userForm" ng-submit="vm.submit()" ng-controller="addController" style="padding: 20px">
-      <div class="form-group">
-        <input class="form-control" id="blogtitle" name="blogtitle">
-        <textarea class="form-control" id="blogtext" name="blogtext" rows="3"></textarea>
+    <form name="userForm" ng-submit="vm.submit()" ng-controller="addController" style="padding: 20px; background-color: #B3E11F">
+      <div class="form-group" style="background-color: #B3E11F">
+      <label for="summary" class="text-primary">Blog Title</label>  
+      <input class="form-control" id="blogtitle" name="blogtitle"> 
+      <label for="detail" class="text-primary">Blog Text</label>
+      <textarea class="form-control" id="blogtext" name="blogtext" rows="3"></textarea>
       </div>
       <input type="submit" class="btn btn-primary" value="Add Blog">
     </form>
