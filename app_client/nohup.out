@@ -1,0 +1,16 @@
+
+> blogger2@0.0.0 start /home/bitnami/blogger2/blogger
+> node ./bin/www
+
+(node:4689) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+Port 80 is already in use
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! blogger2@0.0.0 start: `node ./bin/www`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the blogger2@0.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bitnami/.npm/_logs/2019-04-25T12_00_18_089Z-debug.log

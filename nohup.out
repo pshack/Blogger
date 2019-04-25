@@ -1,0 +1,172 @@
+
+> blogger2@0.0.0 start /home/bitnami/blogger2/blogger
+> node ./bin/www
+
+(node:2725) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+Mongoose connected to mongodb://tasks:tasks@localhost/tasks
+(node:2725) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+[0mGET / [36m304 [0m5.227 ms - -[0m
+[0mGET /bloggerApp.js [36m304 [0m0.933 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m0.302 ms - -[0m
+[0mGET /nav/navigation.js [36m304 [0m0.280 ms - -[0m
+[0mGET /nav/navigation.html [36m304 [0m0.473 ms - -[0m
+[0mGET / [32m200 [0m2.831 ms - 5653[0m
+[0mGET / [32m200 [0m0.705 ms - 5653[0m
+[0mGET / [32m200 [0m0.508 ms - 5653[0m
+[0mGET / [32m200 [0m37.761 ms - 5653[0m
+[0mGET /.env [33m404 [0m30.150 ms - 24[0m
+[0mGET / [32m200 [0m0.624 ms - 5653[0m
+[0mGET / [32m200 [0m0.569 ms - 5653[0m
+[0mGET http://www.baidu.com/ [32m200 [0m0.564 ms - 5653[0m
+[0mGET http://api.ipify.org/ [32m200 [0m0.520 ms - 5653[0m
+[0mGET http://www.epochtimes.com/ [0m- [0m- ms - -[0m
+[0mGET http://www.rfa.org/english/ [0m- [0m- ms - -[0m
+[0mGET http://www.ip.cn/ [32m200 [0m0.522 ms - 5653[0m
+[0mGET http://www.123cha.com/ [32m200 [0m0.505 ms - 5653[0m
+[0mGET http://boxun.com/ [0m- [0m- ms - -[0m
+[0mGET http://www.minghui.org/ [0m- [0m- ms - -[0m
+[0mGET http://www.wujieliulan.com/ [0m- [0m- ms - -[0m
+[0mGET / [32m200 [0m11.515 ms - 5653[0m
+[0mGET /bloggerApp.js [32m200 [0m3.157 ms - 7847[0m
+[0mGET /stylesheets/style.css [32m200 [0m1.621 ms - 1582[0m
+[0mGET /nav/navigation.js [32m200 [0m10.078 ms - 731[0m
+[0mGET /nav/navigation.html [32m200 [0m2.949 ms - 723[0m
+[0mGET /favicon.ico [33m404 [0m6.174 ms - 24[0m
+[0mPOST /api/login [32m200 [0m188.225 ms - 251[0m
+Getting blogs list
+[ { _id: 5cc12551d3244307f6aab7ba,
+    blogtitle: 'Thicc',
+    blogtext: 'Ducc',
+    createdon: 2019-04-25T03:11:13.178Z,
+    __v: 0 } ]
+[0mGET /api/blogs [32m200 [0m12.465 ms - 74[0m
+{ blogtitle: 'Test', blogtext: 'Best Test' }
+{ _id: 5cc19f7ff6b4d60aa58d38eb,
+  blogtitle: 'Test',
+  blogtext: 'Best Test',
+  createdon: 2019-04-25T11:52:31.772Z,
+  __v: 0 }
+[0mPOST /api/blogs [32m201 [0m25.635 ms - 123[0m
+Getting blogs list
+[ { _id: 5cc12551d3244307f6aab7ba,
+    blogtitle: 'Thicc',
+    blogtext: 'Ducc',
+    createdon: 2019-04-25T03:11:13.178Z,
+    __v: 0 },
+  { _id: 5cc19f7ff6b4d60aa58d38eb,
+    blogtitle: 'Test',
+    blogtext: 'Best Test',
+    createdon: 2019-04-25T11:52:31.772Z,
+    __v: 0 } ]
+[0mGET /api/blogs [32m200 [0m2.147 ms - 151[0m
+Finding blog details { blogid: '5cc12551d3244307f6aab7ba' }
+{ _id: 5cc12551d3244307f6aab7ba,
+  blogtitle: 'Thicc',
+  blogtext: 'Ducc',
+  createdon: 2019-04-25T03:11:13.178Z,
+  __v: 0 }
+[0mGET /api/blogs/5cc12551d3244307f6aab7ba [32m200 [0m4.435 ms - 119[0m
+Finding blog details { blogid: '5cc12551d3244307f6aab7ba' }
+{ _id: 5cc12551d3244307f6aab7ba,
+  blogtitle: 'Thicc',
+  blogtext: 'Ducc',
+  createdon: 2019-04-25T03:11:13.178Z,
+  __v: 0 }
+[0mGET /api/blogs/5cc12551d3244307f6aab7ba [36m304 [0m1.633 ms - -[0m
+Deleting book entry with id of 5cc12551d3244307f6aab7ba
+{}
+(node:2725) DeprecationWarning: collection.findAndModify is deprecated. Use findOneAndUpdate, findOneAndReplace or findOneAndDelete instead.
+[0mDELETE /api/blogs/5cc12551d3244307f6aab7ba [32m204 [0m5.095 ms - -[0m
+Getting blogs list
+[ { _id: 5cc19f7ff6b4d60aa58d38eb,
+    blogtitle: 'Test',
+    blogtext: 'Best Test',
+    createdon: 2019-04-25T11:52:31.772Z,
+    __v: 0 } ]
+[0mGET /api/blogs [32m200 [0m1.662 ms - 78[0m
+[0mGET / [36m304 [0m0.395 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m0.301 ms - -[0m
+[0mGET /bloggerApp.js [36m304 [0m0.404 ms - -[0m
+[0mGET /nav/navigation.js [36m304 [0m0.367 ms - -[0m
+[0mGET /nav/navigation.html [36m304 [0m0.428 ms - -[0m
+[0mGET /favicon.ico [33m404 [0m0.480 ms - 24[0m
+[0mPOST /api/login [32m200 [0m15.102 ms - 251[0m
+{ blogtitle: 'y', blogtext: 'y' }
+{ _id: 5cc1a0b1f6b4d60aa58d38ec,
+  blogtitle: 'y',
+  blogtext: 'y',
+  createdon: 2019-04-25T11:57:37.286Z,
+  __v: 0 }
+[0mPOST /api/blogs [32m201 [0m3.700 ms - 112[0m
+Getting blogs list
+[ { _id: 5cc19f7ff6b4d60aa58d38eb,
+    blogtitle: 'Test',
+    blogtext: 'Best Test',
+    createdon: 2019-04-25T11:52:31.772Z,
+    __v: 0 },
+  { _id: 5cc1a0b1f6b4d60aa58d38ec,
+    blogtitle: 'y',
+    blogtext: 'y',
+    createdon: 2019-04-25T11:57:37.286Z,
+    __v: 0 } ]
+[0mGET /api/blogs [32m200 [0m1.655 ms - 144[0m
+Finding blog details { blogid: '5cc1a0b1f6b4d60aa58d38ec' }
+{ _id: 5cc1a0b1f6b4d60aa58d38ec,
+  blogtitle: 'y',
+  blogtext: 'y',
+  createdon: 2019-04-25T11:57:37.286Z,
+  __v: 0 }
+[0mGET /api/blogs/5cc1a0b1f6b4d60aa58d38ec [32m200 [0m1.980 ms - 112[0m
+Finding blog details { blogid: '5cc1a0b1f6b4d60aa58d38ec' }
+{ _id: 5cc1a0b1f6b4d60aa58d38ec,
+  blogtitle: 'y',
+  blogtext: 'y',
+  createdon: 2019-04-25T11:57:37.286Z,
+  __v: 0 }
+[0mGET /api/blogs/5cc1a0b1f6b4d60aa58d38ec [32m200 [0m1.486 ms - 112[0m
+[0mGET /stylesheets/style.css [36m304 [0m0.298 ms - -[0m
+[0mGET / [32m200 [0m0.647 ms - 5694[0m
+[0mGET /stylesheets/style.css [36m304 [0m0.238 ms - -[0m
+[0mGET /bloggerApp.js [36m304 [0m0.434 ms - -[0m
+[0mGET /nav/navigation.js [36m304 [0m0.279 ms - -[0m
+[0mGET /nav/navigation.html [36m304 [0m0.416 ms - -[0m
+Finding blog details { blogid: '5cc1a0b1f6b4d60aa58d38ec' }
+{ _id: 5cc1a0b1f6b4d60aa58d38ec,
+  blogtitle: 'y',
+  blogtext: 'y',
+  createdon: 2019-04-25T11:57:37.286Z,
+  __v: 0 }
+[0mGET /api/blogs/5cc1a0b1f6b4d60aa58d38ec [36m304 [0m2.646 ms - -[0m
+Finding blog details { blogid: '5cc1a0b1f6b4d60aa58d38ec' }
+{ _id: 5cc1a0b1f6b4d60aa58d38ec,
+  blogtitle: 'y',
+  blogtext: 'y',
+  createdon: 2019-04-25T11:57:37.286Z,
+  __v: 0 }
+[0mGET /api/blogs/5cc1a0b1f6b4d60aa58d38ec [36m304 [0m1.498 ms - -[0m
+Getting blogs list
+[ { _id: 5cc19f7ff6b4d60aa58d38eb,
+    blogtitle: 'Test',
+    blogtext: 'Best Test',
+    createdon: 2019-04-25T11:52:31.772Z,
+    __v: 0 },
+  { _id: 5cc1a0b1f6b4d60aa58d38ec,
+    blogtitle: 'y',
+    blogtext: 'y',
+    createdon: 2019-04-25T11:57:37.286Z,
+    __v: 0 } ]
+[0mGET /api/blogs [36m304 [0m2.316 ms - -[0m
+Finding blog details { blogid: '5cc1a0b1f6b4d60aa58d38ec' }
+{ _id: 5cc1a0b1f6b4d60aa58d38ec,
+  blogtitle: 'y',
+  blogtext: 'y',
+  createdon: 2019-04-25T11:57:37.286Z,
+  __v: 0 }
+[0mGET /api/blogs/5cc1a0b1f6b4d60aa58d38ec [36m304 [0m2.120 ms - -[0m
+Finding blog details { blogid: '5cc1a0b1f6b4d60aa58d38ec' }
+{ _id: 5cc1a0b1f6b4d60aa58d38ec,
+  blogtitle: 'y',
+  blogtext: 'y',
+  createdon: 2019-04-25T11:57:37.286Z,
+  __v: 0 }
+[0mGET /api/blogs/5cc1a0b1f6b4d60aa58d38ec [36m304 [0m1.439 ms - -[0m

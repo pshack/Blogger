@@ -28,7 +28,7 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
     <h1>{{vm.listHeader}}</h1>
     <p></p>
     <div ng-repeat="blog in vm.blogs">
-      <div class="card text-white bg-dark mb-3" style="width: 18rem;">
+      <div class="card text-white" style="width: 18rem;">
 	<div class="card-body" style="background-color: #BD9617";>
 	  <h5 class="card-title">{{blog.blogtitle}}</h5>
 	  <p class="card-text">{{blog.blogtext}}</p>
@@ -56,7 +56,7 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 <!-- Edit Page --> 
 <script type="text/ng-template" id="edit.html">
   <p></p>
-  <div class="card text-white bg-dark mb-3" style="width: 50%">
+  <div class="card text-white" style="width: 50%; background-color: #BD9617">
     <form name="userForm" ng-submit="vm.submit()" ng-controller="editController" style="padding: 20px">
       <div class="form-group">
         <input class="form-control" id="blogtitle" name="blogtitle" value="{{vm.blog.blogtitle}}">
@@ -66,9 +66,9 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
     </form>
   </div> </script> <script type="text/ng-template" id="remove.html">
   <p></p>
-  <div class="card text-white bg-dark mb-3" style="width: 18rem">
+  <div class="card text-white" style="width: 18rem; background-color: #BD9617">
     <form name="userForm" ng-submit="vm.submit()" ng-controller="removeController" style="padding: 20px">
-      <div class="card-body">
+      <div class="card-body" style="background-color: #BD9617">
         <h5 class="card-title">{{vm.blog.blogtitle}}</h5>
         <p class="card-text">{{vm.blog.blogtext}}</p>
       </div>
