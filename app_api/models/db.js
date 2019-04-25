@@ -30,3 +30,4 @@ process.on('SIGTERM', function() {
 	process.exit(0);
 }); });
 require('./blogs');
+require('./users');

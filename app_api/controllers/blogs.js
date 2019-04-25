@@ -5,8 +5,7 @@ var sendJSONresponse = function(res, status, content) {
     res.status(status);
     res.json(content);
 }
-//********************************************************************************
- /* GET a list of all blogs */ 
+
 module.exports.blogList = function(req, res) {
     console.log('Getting blogs list');
   Blog
@@ -38,10 +37,6 @@ var buildBlogList = function(req, res, results) {
     return blogs;
 };
  
-module.exports.blogCreate = function (req, res) {
-    sendJSONresponse(res, 200, {"status" : "success"});
-}
-/* POST a new blog */ /* /api/blogs */ 
 module.exports.blogCreate = function(req, res) {
     console.log(req.body);
   Blog
@@ -59,7 +54,8 @@ module.exports.blogCreate = function(req, res) {
 	}
 	       );
 };
- module.exports.blogReadOne = function(req, res) {
+ 
+module.exports.blogReadOne = function(req, res) {
     console.log('Finding blog details', req.params);
     if (req.params && req.params.blogid) {
     Blog
@@ -85,15 +81,15 @@ module.exports.blogCreate = function(req, res) {
 	});
     }
 };
- 
+
 module.exports.blogUpdateOne = function(req, res) {
     console.log("Updating blog: " + req.params.blogid);
     console.log(req.body);
     Blog
 	.findOneAndUpdate(
 	    {_id: req.params.blogid},
-	    {$set: {"blogtitle": req.body.blogtitle}},
-	    {$set: {"blogtext": req.body.blogtext}},
+	    {$set: {"blogtitle": req.body.blogtitle,
+	    "blogtext": req.body.blogtext}},
 	function (err, response) {
 	if (err){
 	    sendJSONresponse(res, 400, err);
@@ -103,7 +99,6 @@ module.exports.blogUpdateOne = function(req, res) {
 	});
 	
 };
-
 module.exports.blogDeleteOne = function(req, res) {
     console.log("Deleting book entry with id of " + req.params.blogid);
     console.log(req.body);
