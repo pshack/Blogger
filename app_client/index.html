@@ -4,17 +4,15 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script> 
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular-route.min.js"></script> 
 <script src="//unpkg.com/@uirouter/angularjs@1.2.14/release/angular-ui-router.min.js"></script> 
-<script src="bloggerApp.js"></script> 
-<script src="/nav/navigation.js"></script> 
+<script src="bloggerApp.js"></script> <script src="/nav/navigation.js"></script> 
 <link rel='stylesheet' href='stylesheets/style.css'/> 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/> 
 </head> 
 
 <!-- Navigation --> 
 <body ng-controller="homeController">
-  
-<div ng-controller="NavigationController">
+  <div ng-controller="NavigationController">
     <navigation></navigation>
   </div>
   
@@ -22,18 +20,18 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
     <h1>{{vm.homeHeader}}</h1>
     <p>{{vm.homeText}}</p>
   </script>
-  
-<!--List Page-->
+  <!--List Page-->
   <script type="text/ng-template" id="list.html">
     <h1>{{vm.listHeader}}</h1>
     <p></p>
     <div ng-repeat="blog in vm.blogs">
-      <div class="card text-white" style="width: 18rem;">
-	<div class="card-body" style="background-color: #BD9617";>
+      <div class="card text-white" style="width: 18rem; background-color: #BD9617">
+	<div class="card-body" style="background-color: #BD9617>
 	  <h5 class="card-title">{{blog.blogtitle}}</h5>
 	  <p class="card-text">{{blog.blogtext}}</p>
-	  <a ng-show="vm.isLoggedIn()" href="#/remove/{{blog._id}}" class="btn btn-primary">Delete</a>
-	  <a ng-show="vm.isLoggedIn()" href="#/edit/{{blog._id}}" class="btn btn-primary">Edit</a>
+	  <h5 class="card-text" style="font-size: .67em">Published by {{blog.userName}} on {{blog.createdon}}</h5>
+	  <a ng-show="vm.isLoggedIn() && vm.isAuthor(blog)" href="#/remove/{{blog._id}}" class="btn btn-primary">Delete</a>
+	  <a ng-show="vm.isLoggedIn() && vm.isAuthor(blog)" href="#/edit/{{blog._id}}" class="btn btn-primary">Edit</a>
 	</div>
       </div>
     </div>
@@ -68,15 +66,13 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
   <p></p>
   <div class="card text-white" style="width: 18rem; background-color: #BD9617">
     <form name="userForm" ng-submit="vm.submit()" ng-controller="removeController" style="padding: 20px">
-      <div class="card-body" style="background-color: #BD9617">
+      <div class="card-body">
         <h5 class="card-title">{{vm.blog.blogtitle}}</h5>
         <p class="card-text">{{vm.blog.blogtext}}</p>
       </div>
       <input type="submit" class="btn btn-primary" value="Delete Blog">
     </form>
-  </div> </script> 
-<!-- Register Page --> 
-<script type="text/ng-template" id="register.html">
+  </div> </script> <!-- Register Page --> <script type="text/ng-template" id="register.html">
  <div class="container">
   <page-header content="vm.pageHeader"></page-header>
   <div class="row">
@@ -100,10 +96,7 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
       </form>
     </div>
   </div>
- </div> </script> 
-
-<!-- Login Page --> 
-<script type="text/ng-template" id="login.html">
+ </div> </script> <!-- Login Page --> <script type="text/ng-template" id="login.html">
   <div class="container">
     <page-header content="vm.pageHeader"></page-header>
     <div class="row">

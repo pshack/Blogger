@@ -5,6 +5,9 @@ var sendJSONresponse = function(res, status, content) {
     res.status(status);
     res.json(content);
 }
+//********************************************************************************
+ 
+/* GET a list of all blogs */ 
 
 module.exports.blogList = function(req, res) {
     console.log('Getting blogs list');
@@ -31,18 +34,26 @@ var buildBlogList = function(req, res, results) {
 	blogs.push({
 	    blogtitle: obj.blogtitle,
 	    blogtext: obj.blogtext,
-	    _id: obj._id
+	    _id: obj._id,
+	    userName:obj.userName,
+	    userEmail:obj.userEmail,
+	    createdon: obj.createdon
 	});
     });
     return blogs;
 };
- 
+//******************************************************************************** 
+
+/* POST a new blog */ 
+
 module.exports.blogCreate = function(req, res) {
     console.log(req.body);
   Blog
 	.create({
 	    blogtitle: req.body.blogtitle,
-	    blogtext: req.body.blogtext
+	    blogtext: req.body.blogtext,
+	    userName: req.body.userName,
+	    userEmail: req.body.userEmail
 	}, function(err, blog) {
 	    if (err) {
 		console.log(err);
@@ -54,7 +65,10 @@ module.exports.blogCreate = function(req, res) {
 	}
 	       );
 };
- 
+//******************************************************************************** 
+
+/* GET a blog by the id */ 
+
 module.exports.blogReadOne = function(req, res) {
     console.log('Finding blog details', req.params);
     if (req.params && req.params.blogid) {
@@ -81,7 +95,9 @@ module.exports.blogReadOne = function(req, res) {
 	});
     }
 };
+//******************************************************************************** 
 
+/* Update one Book entry */ 
 module.exports.blogUpdateOne = function(req, res) {
     console.log("Updating blog: " + req.params.blogid);
     console.log(req.body);
@@ -99,6 +115,8 @@ module.exports.blogUpdateOne = function(req, res) {
 	});
 	
 };
+//*********************************************************************************
+ /* Delete one Book */ 
 module.exports.blogDeleteOne = function(req, res) {
     console.log("Deleting book entry with id of " + req.params.blogid);
     console.log(req.body);
@@ -114,3 +132,4 @@ module.exports.blogDeleteOne = function(req, res) {
             }
         );
 };
+//********************************************************************************

@@ -2,9 +2,9 @@ var app = angular.module('blogApp', ['ngRoute']);
 
 app.service('authentication', authentication); 
 authentication.$inject = ['$window', '$http']; 
+
 function authentication ($window, $http) {
-    
-var saveToken = function (token) {
+    var saveToken = function (token) {
         $window.localStorage['blog-token'] = token;
     };
     var getToken = function () {
@@ -58,7 +58,6 @@ var saveToken = function (token) {
 }
     
     //***Router Provider *** 
-
 app.config(function($routeProvider) {
   $routeProvider
 	.when('/', {
@@ -98,26 +97,29 @@ app.config(function($routeProvider) {
 	})
 	.otherwise({redirectTo: '/'});
 });
-
 //*** Controllers *** 
-
 app.controller('homeController', function homeController() {
     var vm = this;
     vm.homeHeader = "Patrick Hack's Blog Site";
-    vm.homeText = "Welcome to Pat's blog site";
+    vm.homeText = "Welcome to my site";
 });
-app.controller('listController', [ '$http', 'authentication', function listController($http, authentication) {
+app.controller('listController', [ '$http', 'authentication', function listController($http, 
+authentication) {
     var vm = this;
     vm.listHeader = "Blog List";
     vm.isLoggedIn = function(){
 	return authentication.isLoggedIn();
+    }
+    vm.isAuthor = function(blog) {
+	return vm.isLoggedIn() && authentication.currentUser().email == blog.userEmail;
     }
     getAllBlogs($http)
 	.success(function(data) {
 	    vm.blogs = data;
 	})
 }]);
-app.controller('editController', [ '$http', '$routeParams', '$location', 'authentication', function editController($http, $routeParams, $location, authentication){
+app.controller('editController', [ '$http', '$routeParams', '$location', 'authentication', function 
+editController($http, $routeParams, $location, authentication){
     var vm = this;
     var id = $routeParams.blogid;
     vm.isLoggedIn = function() {
@@ -140,7 +142,8 @@ app.controller('editController', [ '$http', '$routeParams', '$location', 'authen
             })
     }
 }]);
-app.controller('removeController', [ '$http', '$routeParams', '$location', 'authentication', function removeController($http, $routeParams, $location, authentication){
+app.controller('removeController', [ '$http', '$routeParams', '$location', 'authentication', function 
+removeController($http, $routeParams, $location, authentication){
     var vm = this;
     var id = $routeParams.blogid;
     vm.isLoggedIn = function(){
@@ -158,7 +161,8 @@ app.controller('removeController', [ '$http', '$routeParams', '$location', 'auth
             })
     }
 }]);
-app.controller('addController', ['$http', '$location', 'authentication', function addController($http, $location, authentication) {
+app.controller('addController', ['$http', '$location', 'authentication', function addController($http, 
+$location, authentication) {
     var vm = this;
     vm.blog = {};
     vm.isLoggedIn = function(){
@@ -169,16 +173,19 @@ app.controller('addController', ['$http', '$location', 'authentication', functio
 	var data = vm.blog;
 	data.blogtitle = userForm.blogtitle.value;
 	data.blogtext = userForm.blogtext.value;
+	data.userName = authentication.currentUser().name;
+	data.userEmail = authentication.currentUser().email;
 	addBlog($http, data, authentication)
 	    .success(function(data) {
 		$location.path('/list').replace();
 	    })
     }
 }]);
-
 //Authentication Service 
 //*** Authentication Service and Methods * 
-app.controller('LoginController', [ '$http', '$location', 'authentication', function LoginController($http, $location, authentication) {
+
+app.controller('LoginController', [ 
+'$http', '$location', 'authentication', function LoginController($http, $location, authentication) {
     var vm = this;
     
     vm.pageHeader = {
@@ -250,9 +257,7 @@ app.controller('RegisterController', [ '$http', '$location', 'authentication', f
             });
     };
 }]);
-
 //*** REST Web API functions *** 
-
 function getAllBlogs($http){
     return $http.get('/api/blogs');
 }
