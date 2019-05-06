@@ -75,6 +75,11 @@ app.config(function($routeProvider) {
 	    controller: 'addController',
             controllerAs: 'vm'
 	})
+        .when('/online', {
+            templateUrl: 'online.html',
+            controller: 'onlineController',
+            controllerAs: 'vm'
+        })
         .when('/edit/:blogid', {
 	    templateUrl: 'edit.html',
 	    controller: 'editController',
@@ -103,8 +108,7 @@ app.controller('homeController', function homeController() {
     vm.homeHeader = "Patrick Hack's Blog Site";
     vm.homeText = "Welcome to my site";
 });
-app.controller('listController', [ '$http', 'authentication', function listController($http, 
-authentication) {
+app.controller('listController', [ '$http', 'authentication', function listController($http, authentication) {
     var vm = this;
     vm.listHeader = "Blog List";
     vm.isLoggedIn = function(){
@@ -117,6 +121,21 @@ authentication) {
 	.success(function(data) {
 	    vm.blogs = data;
 	})
+}]);
+app.controller('onlineController', [ '$http', 'authentication', function onlineController($http, authentication) {
+    var vm = this;
+    vm.onlineHeader = "Online Users";
+    vm.isLoggedIn = function(){
+        return authentication.isLoggedIn();
+    }
+    vm.isOnline = function(users){
+        return vm.isLoggedIn() && authentication.currentUser().email == users.emal;
+    }
+    getAllUsers($http)
+        .success(function(data) {
+	    console.log("trying");
+            vm.users = data;
+        })
 }]);
 app.controller('editController', [ '$http', '$routeParams', '$location', 'authentication', function 
 editController($http, $routeParams, $location, authentication){
@@ -215,6 +234,7 @@ app.controller('LoginController', [
 		vm.formError = obj.message;
             })
             .then(function(){
+                
 		$location.search('page', null);
 		$location.path(vm.returnPage);
             });
@@ -258,12 +278,14 @@ app.controller('RegisterController', [ '$http', '$location', 'authentication', f
     };
 }]);
 //*** REST Web API functions *** 
+function getAllUsers($http){
+    return $http.get('/api/users');
+}
 function getAllBlogs($http){
     return $http.get('/api/blogs');
 }
 function addBlog($http, data, authentication) {
-    return $http.post('/api/blogs', data, { headers: {Authorization: 'Bearer '+ 
-authentication.getToken()}});
+    return $http.post('/api/blogs', data, { headers: {Authorization: 'Bearer '+ authentication.getToken()}});
 }
 function getBlogByID($http, blogid){
     return $http.get('/api/blogs/'+ blogid);

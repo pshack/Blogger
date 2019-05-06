@@ -7,8 +7,8 @@
         <a class="nav-item nav-link active" href="#/list">List Blogs</a>
         <a ng-show="vm.loggedIn()" class="nav-item nav-link active" href="#/add">Add Blog</a>
         <a ng-show="!vm.loggedIn()" class="nav-item nav-link active" href="#/login">Sign In</a>
-        <a ng-show="vm.loggedIn()" class="nav-item nav-link active" href="#/online">Online</a>
-        <a ng-show="vm.loggedIn()" class="nav-item nav-link active" href="" ng-click="vm.logout()"Logout<small>Logout ({{ vm.currentUser().email }})</small></a>
+       ink active" href="" ng-click="vm.logout()"Logout<small>Logout ({{ vm.currentUser().email }})</small></a>
+        <a ng-show="vm.loggedIn()" class="nav-item nav-link active" href="#/mem">Online</a>
     </div> 
 </div> 
 </nav> 

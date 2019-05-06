@@ -57,3 +57,34 @@ module.exports.login = function(req, res) {
 	}
     })(req, res);
 };
+
+/* GET a list of all users */ 
+module.exports.userList = function(req, res) {
+    console.log('Getting user list');
+  User
+	.find()
+	.exec(function(err, results) {
+            if (!results) {
+		sendJSONresponse(res, 404, {
+		    "message": "no users found"
+		});
+		return;
+            } else if (err) {
+		console.log(err);
+		sendJSONresponse(res, 404, err);
+		return;
+            }
+            console.log(results);
+            sendJSONresponse(res, 200, buildUserList(req, res, results));
+	});
+};
+var buildUserList = function(req, res, results) {
+    var users = [];
+    results.forEach(function(obj) {
+	users.push({
+	    email: obj.email
+	});
+    });
+    return users;
+};
+

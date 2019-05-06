@@ -17,6 +17,10 @@ router.get('/blogs/:blogid', ctrlBlogs.blogReadOne);
 router.put('/blogs/:blogid', auth, ctrlBlogs.blogUpdateOne); 
 router.delete('/blogs/:blogid', auth, ctrlBlogs.blogDeleteOne); 
 router.post('/register', ctrlAuth.register); 
-router.post('/login', ctrlAuth.login); //users
+router.post('/login', ctrlAuth.login);
+
+//users
+router.get('/users', ctrlAuth.userList);
+
 
 module.exports = router;
